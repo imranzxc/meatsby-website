@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 const initialState = {
   products: [],
   loading: false,
-  error: null
+  error: null,
 };
 
 const productSlice = createSlice({
@@ -13,17 +13,17 @@ const productSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-    .addCase(getProduct.fulfilled, (state, action) => {
-      state.products = action.payload;
-      state.error = null
-      state.loading = false
-    })
-    .addCase(getProduct.pending, (state, action) => {
-      state.loading = true
-    })
-    .addCase(getProduct.rejected, (state, action) => {
-      state.error = action.payload;
-    })
+      .addCase(getProduct.fulfilled, (state, action) => {
+        state.products = action.payload;
+        state.error = null;
+        state.loading = false;
+      })
+      .addCase(getProduct.pending, (state, action) => {
+        state.loading = true;
+      })
+      .addCase(getProduct.rejected, (state, action) => {
+        state.error = action.payload;
+      });
   },
 });
 

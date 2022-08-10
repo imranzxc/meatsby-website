@@ -10,7 +10,7 @@
     "start": "cd .. && cd client && yarn start",
     "dev": "concurrently \"yarn server\" \"yarn client  \" ",
     "prod": "concurrently \"yarn server\" \"yarn start  \" ",
-    "prettier": "prettier --config .prettierrc \"src/**/*.{js,jsx,ts,tsx}\" --write"
+    "prettier": "prettier --config .prettierrc \"**/*.{js,jsx,ts,tsx}\" --write"
   },
   "keywords": [],
   "author": "",

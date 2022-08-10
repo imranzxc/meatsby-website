@@ -80,7 +80,8 @@ const Header = () => {
                 <NavLink
                   to={item.path}
                   key={index}
-                  className={(navClass) => (navClass.isActive ? 'active__menu' : '')}>
+                  className={(navClass) => (navClass.isActive ? 'active__menu' : '')}
+                >
                   {item.display}
                 </NavLink>
               ))}

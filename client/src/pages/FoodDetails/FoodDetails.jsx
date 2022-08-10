@@ -43,7 +43,7 @@ const FoodDetails = () => {
         title,
         price,
         image01,
-      }),
+      })
     );
   };
 
@@ -128,7 +128,8 @@ const FoodDetails = () => {
 
                       <button
                         onClick={() => addItem(item.id, item.title, item.price, item.image01)}
-                        className="addTOCart__btn">
+                        className="addTOCart__btn"
+                      >
                         Add to Cart
                       </button>
                     </div>
@@ -138,12 +139,14 @@ const FoodDetails = () => {
                     <div className="tabs d-flex align-items-center gap-5 py-3">
                       <h6
                         className={` ${tab === 'desc' ? 'tab__active' : ''}`}
-                        onClick={() => setTab('desc')}>
+                        onClick={() => setTab('desc')}
+                      >
                         Description
                       </h6>
                       <h6
                         className={` ${tab === 'rev' ? 'tab__active' : ''}`}
-                        onClick={() => setTab('rev')}>
+                        onClick={() => setTab('rev')}
+                      >
                         Review
                       </h6>
                     </div>

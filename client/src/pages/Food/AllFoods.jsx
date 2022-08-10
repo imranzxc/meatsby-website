@@ -28,14 +28,14 @@ const AllFoods = () => {
       return item;
     }
     if (item.title.toLowerCase().includes(searchTerm.toLowerCase())) {
-      console.log(item)
+      console.log(item);
       return item;
     } else {
       return console.log('not found');
     }
   });
 
-  console.log(searchedProduct)
+  console.log(searchedProduct);
   const productPerPage = 12;
   const visitedPage = pageNumber * productPerPage;
   const displayPage = searchedProduct.slice(visitedPage, visitedPage + productPerPage);

@@ -1,14 +1,12 @@
-
 import Helmet from '../components/Helmet/Helmet';
 import CommonSection from '../components/UI/common-section/CommonSection';
 import { Container, Row, Col } from 'reactstrap';
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { createUser } from '../store/shopping-cart/authSlice';
 
 const Register = () => {
-
   const dispatch = useDispatch();
 
   const [email, setEmail] = useState('');

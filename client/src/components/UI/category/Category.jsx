@@ -1,31 +1,31 @@
-import React from "react";
+import React from 'react';
 
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row, Col } from 'reactstrap';
 
-import categoryImg01 from "../../../assets/images/category-01.png";
-import categoryImg02 from "../../../assets/images/category-02.png";
-import categoryImg03 from "../../../assets/images/category-03.png";
-import categoryImg04 from "../../../assets/images/category-04.png";
+import categoryImg01 from '../../../assets/images/category-01.png';
+import categoryImg02 from '../../../assets/images/category-02.png';
+import categoryImg03 from '../../../assets/images/category-03.png';
+import categoryImg04 from '../../../assets/images/category-04.png';
 
-import "../../../styles/category.css";
+import '../../../styles/category.css';
 
 const categoryData = [
   {
-    display: "Fastfood",
+    display: 'Fastfood',
     imgUrl: categoryImg01,
   },
   {
-    display: "Pizza",
+    display: 'Pizza',
     imgUrl: categoryImg02,
   },
 
   {
-    display: "Asian Food",
+    display: 'Asian Food',
     imgUrl: categoryImg03,
   },
 
   {
-    display: "Row Meat",
+    display: 'Row Meat',
     imgUrl: categoryImg04,
   },
 ];

@@ -1,109 +1,96 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-import Helmet from "../components/Helmet/Helmet.js";
-import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
+import Helmet from '../components/Helmet/Helmet.js';
+import { Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap';
 
-import heroImg from "../assets/images/hero.png";
-import "../styles/hero-section.css";
+import heroImg from '../assets/images/hero.png';
+import '../styles/hero-section.css';
 
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-import Category from "../components/UI/category/Category.jsx";
+import Category from '../components/UI/category/Category.jsx';
 
-import "../styles/home.css";
+import '../styles/home.css';
 
-import featureImg01 from "../assets/images/service-01.png";
-import featureImg02 from "../assets/images/service-02.png";
-import featureImg03 from "../assets/images/service-03.png";
+import featureImg01 from '../assets/images/service-01.png';
+import featureImg02 from '../assets/images/service-02.png';
+import featureImg03 from '../assets/images/service-03.png';
 
+import foodCategoryImg01 from '../assets/images/hamburger.png';
+import foodCategoryImg02 from '../assets/images/pizza.png';
+import foodCategoryImg03 from '../assets/images/bread.png';
 
-import foodCategoryImg01 from "../assets/images/hamburger.png";
-import foodCategoryImg02 from "../assets/images/pizza.png";
-import foodCategoryImg03 from "../assets/images/bread.png";
+import ProductCard from '../components/UI/product-card/ProductCard.jsx';
 
-import ProductCard from "../components/UI/product-card/ProductCard.jsx";
+import whyImg from '../assets/images/location.png';
 
-import whyImg from "../assets/images/location.png";
+import networkImg from '../assets/images/network.png';
 
-import networkImg from "../assets/images/network.png";
-
-import TestimonialSlider from "../components/UI/slider/TestimonialSlider.jsx";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { getProduct } from "../store/shopping-cart/productSlice.js";
-
-
-
+import TestimonialSlider from '../components/UI/slider/TestimonialSlider.jsx';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { getProduct } from '../store/shopping-cart/productSlice.js';
 
 const featureData = [
   {
-    title: "Quick Delivery",
+    title: 'Quick Delivery',
     imgUrl: featureImg01,
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.",
+    desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.',
   },
 
   {
-    title: "Super Dine In",
+    title: 'Super Dine In',
     imgUrl: featureImg02,
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.",
+    desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.',
   },
   {
-    title: "Easy Pick Up",
+    title: 'Easy Pick Up',
     imgUrl: featureImg03,
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.",
+    desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.',
   },
 ];
 
 const Home = () => {
-  const dispatch = useDispatch()
-  const products = useSelector((state) => state.product.products)
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.product.products);
 
-
-
-  const [category, setCategory] = useState("ALL");
+  const [category, setCategory] = useState('ALL');
   const [allProducts, setAllProducts] = useState(products);
 
   const [hotPizza, setHotPizza] = useState([]);
 
   useEffect(() => {
-    
-    const filteredPizza = products.filter((item) => item.category === "Pizza");
+    const filteredPizza = products.filter((item) => item.category === 'Pizza');
     const slicePizza = filteredPizza.slice(0, 4);
     setHotPizza(slicePizza);
-    dispatch(getProduct())
+    dispatch(getProduct());
   }, []);
 
   useEffect(() => {
-    if (category === "ALL") {
+    if (category === 'ALL') {
       setAllProducts(products);
     }
 
-    if (category === "BURGER") {
-      const filteredProducts = products.filter(
-        (item) => item.category === "Burger"
-      );
+    if (category === 'BURGER') {
+      const filteredProducts = products.filter((item) => item.category === 'Burger');
 
       setAllProducts(filteredProducts);
     }
 
-    if (category === "PIZZA") {
-      const filteredProducts = products.filter(
-        (item) => item.category === "Pizza"
-      );
+    if (category === 'PIZZA') {
+      const filteredProducts = products.filter((item) => item.category === 'Pizza');
 
       setAllProducts(filteredProducts);
     }
 
-    if (category === "BREAD") {
-      const filteredProducts = products.filter(
-        (item) => item.category === "Bread"
-      );
+    if (category === 'BREAD') {
+      const filteredProducts = products.filter((item) => item.category === 'Bread');
 
       setAllProducts(filteredProducts);
     }
   }, [category]);
 
-  console.log(allProducts)
+  console.log(allProducts);
 
   return (
     <Helmet title="Home">
@@ -119,8 +106,8 @@ const Home = () => {
                 </h1>
 
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui
-                  magni delectus tenetur autem, sint veritatis!
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui magni delectus
+                  tenetur autem, sint veritatis!
                 </p>
 
                 <div className="hero__btns d-flex align-items-center gap-5 mt-4">
@@ -137,14 +124,14 @@ const Home = () => {
                   <p className=" d-flex align-items-center gap-2 ">
                     <span className="shipping__icon">
                       <i class="ri-car-line"></i>
-                    </span>{" "}
+                    </span>{' '}
                     No shipping charge
                   </p>
 
                   <p className=" d-flex align-items-center gap-2 ">
                     <span className="shipping__icon">
                       <i class="ri-shield-check-line"></i>
-                    </span>{" "}
+                    </span>{' '}
                     100% secure checkout
                   </p>
                 </div>
@@ -174,23 +161,17 @@ const Home = () => {
                 we will <span>take care</span>
               </h2>
               <p className="mb-1 mt-4 feature__text">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor,
-                officiis?
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, officiis?
               </p>
               <p className="feature__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Aperiam, eius.{" "}
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, eius.{' '}
               </p>
             </Col>
 
             {featureData.map((item, index) => (
               <Col lg="4" md="6" sm="6" key={index} className="mt-5">
                 <div className="feature__item text-center px-5 py-3">
-                  <img
-                    src={item.imgUrl}
-                    alt="feature-img"
-                    className="w-25 mb-3"
-                  />
+                  <img src={item.imgUrl} alt="feature-img" className="w-25 mb-3" />
                   <h5 className=" fw-bold mb-3">{item.title}</h5>
                   <p>{item.desc}</p>
                 </div>
@@ -210,18 +191,16 @@ const Home = () => {
             <Col lg="12">
               <div className="food__category d-flex align-items-center justify-content-center gap-4">
                 <button
-                  className={`all__btn  ${
-                    category === "ALL" ? "foodBtnActive" : ""
-                  } `}
-                  onClick={() => setCategory("ALL")}
+                  className={`all__btn  ${category === 'ALL' ? 'foodBtnActive' : ''} `}
+                  onClick={() => setCategory('ALL')}
                 >
                   All
                 </button>
                 <button
                   className={`d-flex align-items-center gap-2 ${
-                    category === "BURGER" ? "foodBtnActive" : ""
+                    category === 'BURGER' ? 'foodBtnActive' : ''
                   } `}
-                  onClick={() => setCategory("BURGER")}
+                  onClick={() => setCategory('BURGER')}
                 >
                   <img src={foodCategoryImg01} alt="" />
                   Burger
@@ -229,9 +208,9 @@ const Home = () => {
 
                 <button
                   className={`d-flex align-items-center gap-2 ${
-                    category === "PIZZA" ? "foodBtnActive" : ""
+                    category === 'PIZZA' ? 'foodBtnActive' : ''
                   } `}
-                  onClick={() => setCategory("PIZZA")}
+                  onClick={() => setCategory('PIZZA')}
                 >
                   <img src={foodCategoryImg02} alt="" />
                   Pizza
@@ -239,9 +218,9 @@ const Home = () => {
 
                 <button
                   className={`d-flex align-items-center gap-2 ${
-                    category === "BREAD" ? "foodBtnActive" : ""
+                    category === 'BREAD' ? 'foodBtnActive' : ''
                   } `}
-                  onClick={() => setCategory("BREAD")}
+                  onClick={() => setCategory('BREAD')}
                 >
                   <img src={foodCategoryImg03} alt="" />
                   Bread
@@ -271,21 +250,18 @@ const Home = () => {
                   Why <span>Tasty Treat?</span>
                 </h2>
                 <p className="tasty__treat-desc">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Dolorum, minus. Tempora reprehenderit a corporis velit,
-                  laboriosam vitae ullam, repellat illo sequi odio esse iste
-                  fugiat dolor, optio incidunt eligendi deleniti!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, minus. Tempora
+                  reprehenderit a corporis velit, laboriosam vitae ullam, repellat illo sequi odio
+                  esse iste fugiat dolor, optio incidunt eligendi deleniti!
                 </p>
 
                 <ListGroup className="mt-4">
                   <ListGroupItem className="border-0 ps-0">
                     <p className=" choose__us-title d-flex align-items-center gap-2 ">
-                      <i class="ri-checkbox-circle-line"></i> Fresh and tasty
-                      foods
+                      <i class="ri-checkbox-circle-line"></i> Fresh and tasty foods
                     </p>
                     <p className="choose__us-desc">
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                      Quia, voluptatibus.
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia, voluptatibus.
                     </p>
                   </ListGroupItem>
 
@@ -294,19 +270,16 @@ const Home = () => {
                       <i class="ri-checkbox-circle-line"></i> Quality support
                     </p>
                     <p className="choose__us-desc">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Qui, earum.
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, earum.
                     </p>
                   </ListGroupItem>
 
                   <ListGroupItem className="border-0 ps-0">
                     <p className="choose__us-title d-flex align-items-center gap-2 ">
-                      <i class="ri-checkbox-circle-line"></i>Order from any
-                      location{" "}
+                      <i class="ri-checkbox-circle-line"></i>Order from any location{' '}
                     </p>
                     <p className="choose__us-desc">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Qui, earum.
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, earum.
                     </p>
                   </ListGroupItem>
                 </ListGroup>
@@ -342,9 +315,8 @@ const Home = () => {
                   What our <span>customers</span> are saying
                 </h2>
                 <p className="testimonial__desc">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Distinctio quasi qui minus quos sit perspiciatis inventore
-                  quis provident placeat fugiat!
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio quasi qui
+                  minus quos sit perspiciatis inventore quis provident placeat fugiat!
                 </p>
 
                 <TestimonialSlider />

@@ -1,19 +1,18 @@
-import React from "react";
+import React from 'react';
 
-import CommonSection from "../components/UI/common-section/CommonSection";
-import Helmet from "../components/Helmet/Helmet";
-import "../styles/cart-page.css";
-import { useSelector, useDispatch } from "react-redux";
-import { Container, Row, Col } from "reactstrap";
-import { cartActions } from "../store/shopping-cart/cartSlice";
-import { Link } from "react-router-dom";
+import CommonSection from '../components/UI/common-section/CommonSection';
+import Helmet from '../components/Helmet/Helmet';
+import '../styles/cart-page.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { Container, Row, Col } from 'reactstrap';
+import { cartActions } from '../store/shopping-cart/cartSlice';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
   const totalAmount = useSelector((state) => state.cart.totalAmount);
 
-
-  console.log(cartItems)
+  console.log(cartItems);
   return (
     <Helmet title="Cart">
       <CommonSection title="Your Cart" />
@@ -44,8 +43,7 @@ const Cart = () => {
 
               <div className="mt-4">
                 <h6>
-                  Subtotal: $
-                  <span className="cart__subtotal">{totalAmount}</span>
+                  Subtotal: $<span className="cart__subtotal">{totalAmount}</span>
                 </h6>
                 <p>Taxes and shipping will calculate at checkout</p>
                 <div className="cart__page-btn">

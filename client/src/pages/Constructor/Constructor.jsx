@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from '../components/Helmet/Helmet';
-import { Container} from 'reactstrap';
+import { Container } from 'reactstrap';
 import { useRef, useState } from 'react';
 import '../styles/pizza-builder.css';
 
@@ -81,7 +81,7 @@ const Register = () => {
       state.selectedToppings.includes(selectedTopping)
         ? setState((prevState) => ({
             selectedToppings: prevState.selectedToppings.filter(
-              (topping) => topping !== selectedTopping,
+              (topping) => topping !== selectedTopping
             ),
           }))
         : setState((prevState) => ({
@@ -109,7 +109,7 @@ const Register = () => {
         state.orderConfirmed
           ? closeConfirmationBtnRef.current.focus()
           : confirmOrderBtnRef.current.focus();
-      },
+      }
     );
   };
 
@@ -154,8 +154,6 @@ const Register = () => {
   );
 };
 
-
-
 function ToppingSelect({ toppingOptions, toppingPrice, handleToppingOptionClick }) {
   return (
     <div className="topping-select">
@@ -188,7 +186,8 @@ function ToppingOption({ topping, toppingIcons }) {
       <label
         className="topping-label"
         htmlFor={topping}
-        aria-label={`${topping} (${toppingIcons.map((icon) => icon)})`}>
+        aria-label={`${topping} (${toppingIcons.map((icon) => icon)})`}
+      >
         <div className="topping-image">
           <div className={`${topping} topping-image-item`}></div>
         </div>
@@ -234,7 +233,7 @@ function PizzaTopping({ topping, toppingAmount }) {
 
   for (let i = 1; i <= toppingAmount; i++) {
     toppings.push(
-      <div key={`${topping + i}`} className={`topping ${topping} ${topping}-${i} `}></div>,
+      <div key={`${topping + i}`} className={`topping ${topping} ${topping}-${i} `}></div>
     );
   }
 
@@ -282,14 +281,16 @@ function OrderDetails({
             <p
               id="discount-message"
               className="discount-message discount-message--valid"
-              role="alert">
+              role="alert"
+            >
               Valid Code: {discount.codes[discount.userCode]}% Off
             </p>
           ) : (
             <p
               id="discount-message"
               className="discount-message discount-message--invalid"
-              role="alert">
+              role="alert"
+            >
               Invalid Code
             </p>
           )
@@ -297,7 +298,8 @@ function OrderDetails({
         <button
           className="btn discount-btn"
           onClick={handleDiscountClick}
-          aria-label="Apply Discount">
+          aria-label="Apply Discount"
+        >
           Apply
         </button>
       </div>
@@ -314,7 +316,8 @@ function OrderDetails({
           className="btn order-btn"
           onClick={handleOrderSubmit}
           aria-label="Confirm Order"
-          ref={confirmOrderBtnRef}>
+          ref={confirmOrderBtnRef}
+        >
           Order
         </button>
       </div>
@@ -332,7 +335,8 @@ function OrderConfirmation({ closeConfirmationBtnRef, handleOrderSubmit }) {
           className="btn close-btn"
           onClick={handleOrderSubmit}
           aria-label="Close Confirmation"
-          ref={closeConfirmationBtnRef}>
+          ref={closeConfirmationBtnRef}
+        >
           Close
         </button>
       </div>
