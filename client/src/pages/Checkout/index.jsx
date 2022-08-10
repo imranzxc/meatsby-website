@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Container, Row, Col } from 'reactstrap';
-import CommonSection from '../components/UI/common-section/CommonSection';
-import Helmet from '../components/Helmet/Helmet';
+import CommonSection from '../../components/UI/common-section/CommonSection';
+import Helmet from '../../components/Helmet/Helmet';
 
-import '../styles/checkout.css';
+// import './checkout.module.css';
 
 const Checkout = () => {
   const [enterName, setEnterName] = useState('');

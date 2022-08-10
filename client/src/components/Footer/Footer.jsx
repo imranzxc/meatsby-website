@@ -2,9 +2,9 @@ import React from 'react';
 import { Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap';
 import logo from '../../assets/images/res-logo.png';
 
-import '../../styles/footer.css';
+// import '../../styles/footer.css';
 
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -75,27 +75,27 @@ const Footer = () => {
               <p className="m-0">Follow: </p>
               <span>
                 {' '}
-                <Link to="instagram.com/imranzxc">
+                <Link href="instagram.com/imranzxc">
                   <i className="ri-facebook-line"></i>
                 </Link>{' '}
               </span>
 
               <span>
-                <Link to="https://github.com/imranzxc">
+                <Link href="https://github.com/imranzxc">
                   <i className="ri-github-line"></i>
                 </Link>
               </span>
 
               <span>
                 {' '}
-                <Link to="https://www.youtube.com/channel/UCU_CzyUGuug2b169NOzaRZA">
+                <Link href="https://www.youtube.com/channel/UCU_CzyUGuug2b169NOzaRZA">
                   <i className="ri-youtube-line"></i>
                 </Link>{' '}
               </span>
 
               <span>
                 {' '}
-                <Link to="instagram.com/imranzxc">
+                <Link href="instagram.com/imranzxc">
                   <i className="ri-linkedin-line"></i>
                 </Link>{' '}
               </span>

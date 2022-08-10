@@ -5,7 +5,7 @@ import ava01 from '../../../assets/images/ava-1.jpg';
 import ava02 from '../../../assets/images/ava-2.jpg';
 import ava03 from '../../../assets/images/ava-3.jpg';
 
-import '../../../styles/slider.css';
+// import '../../../styles/slider.css';
 
 const TestimonialSlider = () => {
   const settings = {

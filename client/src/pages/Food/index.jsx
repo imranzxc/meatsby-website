@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import Helmet from '../components/Helmet/Helmet';
-import CommonSection from '../components/UI/common-section/CommonSection';
+import Helmet from '../../components/Helmet/Helmet';
+import CommonSection from '../../components/UI/common-section/CommonSection';
 
 import { Container, Row, Col } from 'reactstrap';
 
-import ProductCard from '../components/UI/product-card/ProductCard';
+import ProductCard from '../../components/UI/product-card/ProductCard';
 import ReactPaginate from 'react-paginate';
 
-import '../styles/all-foods.css';
-import '../styles/pagination.css';
+// import './all-foods.module.css';
+// import './pagination.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { getProduct } from '../store/shopping-cart/productSlice';
+import { getProduct } from '../../store/shopping-cart/productSlice';
 
 const AllFoods = () => {
   const [searchTerm, setSearchTerm] = useState('');

@@ -1,13 +1,15 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
-  signingUp: false,
-  signingIn: false,
-  user: {},
-  error: null,
-  registered: false,
-  token: localStorage.getItem('token'),
-};
+if (typeof window !== 'undefined') { var user = localStorage.getItem('token') }
+
+  var initialState = {
+    signingUp: false,
+    signingIn: false,
+    user: {},
+    error: null,
+    registered: false,
+    token: user,
+  }
 
 export const createUser = createAsyncThunk(
   'auth/createUser',

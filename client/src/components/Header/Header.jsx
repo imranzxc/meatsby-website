@@ -8,7 +8,7 @@ import { HiLogout } from 'react-icons/hi';
 
 import { cartUiActions } from '../../store/shopping-cart/cartUiSlice';
 
-import '../../styles/header.css';
+// import '../../styles/header.css';
 import { logOut } from '../../store/shopping-cart/authSlice';
 
 const nav__links = [
@@ -96,13 +96,13 @@ const Header = () => {
             </span>
 
             <span className="user">
-              <Link to="/login">
+              <Link href="/login">
                 <i className="ri-user-line"></i>
               </Link>
             </span>
 
             <span>
-              <Link to="/login">
+              <Link href="/login">
                 {token ? (
                   <div onClick={tokenRemoval} className="logout">
                     <HiLogout />

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "server": "nodemon index.js",
-    "client": "cd .. && cd client && yarn start",
+    "client": "cd .. && cd client && yarn dev",
     "build": "cd .. && cd client && yarn build",
     "start": "cd .. && cd client && yarn start",
     "dev": "concurrently \"yarn server\" \"yarn client  \" ",
