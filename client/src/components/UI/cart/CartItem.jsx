@@ -1,10 +1,10 @@
-import React from "react";
-import { ListGroupItem } from "reactstrap";
+import React from 'react';
+import { ListGroupItem } from 'reactstrap';
 
-import "../../../styles/cart-item.css";
+import '../../../styles/cart-item.css';
 
-import { useDispatch } from "react-redux";
-import { cartActions } from "../../../store/shopping-cart/cartSlice";
+import { useDispatch } from 'react-redux';
+import { cartActions } from '../../../store/shopping-cart/cartSlice';
 
 const CartItem = ({ item }) => {
   const { id, title, price, image01, quantity, totalPrice } = item;

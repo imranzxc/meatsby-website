@@ -30,7 +30,7 @@ export const createUser = createAsyncThunk(
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }
-  },
+  }
 );
 
 export const doLogin = createAsyncThunk('auth/doLogin', async (payload, thunkAPI) => {

@@ -26,13 +26,13 @@ const Login = () => {
   };
 
   const handleClickAuth = () => {
-    dispatch(doLogin({ email, password }))
-    setEmail('')
-    setPassword('')
+    dispatch(doLogin({ email, password }));
+    setEmail('');
+    setPassword('');
   };
 
-  const signingIn = useSelector((state) => state.auth.signingIn)
-  const error = useSelector((state) => state.auth.error)
+  const signingIn = useSelector((state) => state.auth.signingIn);
+  const error = useSelector((state) => state.auth.error);
 
   return (
     <Helmet title="Login">
@@ -42,8 +42,8 @@ const Login = () => {
           <Row>
             <Col lg="6" md="6" sm="12" className="m-auto text-center">
               <form className="form mb-5" onSubmit={submitHandler}>
-              {signingIn && <div>You are authorized</div>}
-              {error && <div>{error.message}</div>}
+                {signingIn && <div>You are authorized</div>}
+                {error && <div>{error.message}</div>}
                 <div className="form__group">
                   <input
                     type="email"

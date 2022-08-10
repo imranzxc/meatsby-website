@@ -11,7 +11,7 @@ const ProductCard = (props) => {
   const { id, title, image01, price } = props.item;
   const dispatch = useDispatch();
 
-  console.log('ITEM', props)
+  console.log('ITEM', props);
 
   const addToCart = () => {
     dispatch(
@@ -20,7 +20,7 @@ const ProductCard = (props) => {
         title,
         image01,
         price,
-      }),
+      })
     );
   };
 

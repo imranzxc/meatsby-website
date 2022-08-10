@@ -1,7 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const cartUiSlice = createSlice({
-  name: "cartUi",
+  name: 'cartUi',
   initialState: { cartIsVisible: false },
 
   reducers: {
