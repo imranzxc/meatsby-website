@@ -18,7 +18,6 @@ app.use(require('./product.route'));
 app.use(require('./user.route'));
 app.use(express.json({ limit: '50mb' }));
 
-
 app.get('/welcome', auth, (req, res) => {
   res.status(200).send('Welcome 🙌 ');
 });
