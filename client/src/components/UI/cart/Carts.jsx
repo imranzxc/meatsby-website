@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ListGroup } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import CartItem from './CartItem';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -40,7 +40,7 @@ const Carts = () => {
             Subtotal : <span>${totalAmount}</span>
           </h6>
           <button disabled={!token}>
-            <Link to="/checkout" onClick={toggleCart}>
+            <Link href="/checkout" onClick={toggleCart}>
               Checkout
             </Link>
           </button>

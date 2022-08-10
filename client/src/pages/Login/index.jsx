@@ -1,10 +1,10 @@
 import React, { useRef, useState } from 'react';
-import Helmet from '../components/Helmet/Helmet';
-import CommonSection from '../components/UI/common-section/CommonSection';
+import Helmet from '../../components/Helmet/Helmet';
+import CommonSection from '../../components/UI/common-section/CommonSection';
 import { Container, Row, Col } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { useDispatch } from 'react-redux';
-import { doLogin } from '../store/shopping-cart/authSlice';
+import { doLogin } from '../../store/shopping-cart/authSlice';
 import { useSelector } from 'react-redux';
 
 const Login = () => {
@@ -66,7 +66,7 @@ const Login = () => {
                   Login
                 </button>
               </form>
-              <Link to="/register">Don't have an account? Create an account</Link>
+              <Link href="/register">Don't have an account? Create an account</Link>
             </Col>
           </Row>
         </Container>

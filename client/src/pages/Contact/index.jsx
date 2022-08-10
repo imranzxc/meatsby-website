@@ -1,5 +1,4 @@
-import React from 'react';
-import '../styles/contact-page.css';
+// import './contact-page.module.css';
 
 const Contact = () => {
   return <div className="contact__container"></div>;

@@ -1,10 +1,10 @@
-import Helmet from '../components/Helmet/Helmet';
-import CommonSection from '../components/UI/common-section/CommonSection';
+import Helmet from '../../components/Helmet/Helmet';
+import CommonSection from '../../components/UI/common-section/CommonSection';
 import { Container, Row, Col } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
-import { createUser } from '../store/shopping-cart/authSlice';
+import { createUser } from '../../store/shopping-cart/authSlice';
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -91,7 +91,7 @@ const Register = () => {
                   Sign Up
                 </button>
               </form>
-              <Link to="/login">Already have an account? Login</Link>
+              <Link href="/login">Already have an account? Login</Link>
             </Col>
           </Row>
         </Container>

@@ -1,8 +1,8 @@
 import React from 'react';
-import Helmet from '../components/Helmet/Helmet';
+import Helmet from '../../components/Helmet/Helmet';
 import { Container } from 'reactstrap';
 import { useRef, useState } from 'react';
-import '../styles/pizza-builder.css';
+// import '../styles/pizza-builder.module.css';
 
 const Register = () => {
   const [state, setState] = useState({
